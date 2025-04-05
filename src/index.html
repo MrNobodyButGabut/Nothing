@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind CSS Demo</title>
+    <link href="../dist/output.css" rel="stylesheet" />
+    <style>
+      @keyframes custom-bounce {
+        0%,
+        100% {
+          transform: translateY(-20px);
+          animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+        }
+        50% {
+          transform: translateY(0);
+          animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+        }
+      }
+
+      .bounce-animation {
+        animation: custom-bounce 2s infinite;
+      }
+
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        visibility: hidden;
+        transition: opacity 1s ease-out, transform 1s ease-out, visibility 1s;
+      }
+
+      .fade-in.active {
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+      }
+
+      /* Add this new style for smooth scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      .message-container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 2rem;
+      }
+
+      .message-part {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 1.5s ease-out;
+        margin-bottom: 2.5rem;
+        text-align: center;
+      }
+
+      .message-part p {
+        font-size: 1.75rem;
+        line-height: 1.8;
+        letter-spacing: 0.01em;
+        font-weight: 400;
+      }
+
+      .message-part.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .space-line {
+        height: 5rem;
+      }
+
+      .special-text {
+        font-style: italic;
+        color: #93c5fd;
+        font-size: 1.4rem;
+      }
+
+      @media (max-width: 640px) {
+        .message-part p {
+          font-size: 1.5rem;
+        }
+        .special-text {
+          font-size: 1.3rem;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-zinc-900">
+    <!-- First section -->
+    <section class="h-screen flex items-center justify-center">
+      <h1
+        class="text-9xl font-bold text-slate-200 tracking-tight bounce-animation"
+      >
+        Hello Nacaaa 👻
+      </h1>
+    </section>
+
+    <!-- Message section -->
+    <section id="section2" class="min-h-screen p-8">
+      <div class="message-container">
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">
+            Hayiii, uda 1 hari lebih kita ga ngobrol yaaaa...
+          </p>
+        </div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">
+            Keliatannya kamu ga ada masalah yaa, baguslahh. Aku jadi happy kalo
+            kamu ga stress hihihi.
+          </p>
+        </div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">
+            Gimana 1 hari kmaren tanpa aku?? Jadi lebih tenang kannn, kamu bisa
+            sepuasnya main sama yang lainnn.
+          </p>
+        </div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">
+            Maap yaa kalo selama ini kamu sungkan buat main sama mereka
+            gara-gara akuu.
+          </p>
+        </div>
+
+        <div class="space-line"></div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4 special-text">
+            Jujur aku masih sedih banget wkwkwk.
+          </p>
+        </div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">
+            Entahlahh nyesek aja rasanyaa, ternyata ini lebih berat dari pada
+            putus kmarenn huaaa.
+          </p>
+        </div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">
+            Aku mau tanya kabar kamu, mau denger cerita kamu hari ini, mau
+            ditemenin kamu. Tapi uda gabisa yaaa huhu.
+          </p>
+        </div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">
+            Kamu sering-sering upload story dong biar aku tau kamu ngapain ajaaa
+            hehe.
+          </p>
+        </div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">
+            Aku kmaren banyak upload story biar kamu liat aku ngapain aja
+            seharian ituu.
+          </p>
+        </div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">
+            Mau skalian ku jelasin kahh?? Boleeehh, jadi aku bangun pagiii cek
+            wa trus baru inget kita uda pisaahh. Jadi aku main TikTok. Ehhh pas
+            banget nongol quotes-quotes yang relate jadi aku repost dehh. Makin
+            ku repost, makin muncul semua. Trus nongol notif kamu ngelikeee.
+            Agak happy, brarti kamu ga sepenuhnya ngehindar hehehe.
+          </p>
+        </div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">
+            Abis ituu aku sarapan kentang gorengg buaanyaak kalii. Makanya
+            sekarang aku batuk-batuk huaaa. Abis itu aku stress di rumah
+            sendirian ga ngapa-ngapain. Jadi aku izin keluar buat muter-muter.
+            Berakhir aku ke mall trus nonton nezha lagi tapi sendiri doaangg.
+            Knapa aku nonton lagii?? Karna keinget nama panggilan kamu wkwkwk
+            samaa aku mau skalian nangis-nangis ajaa. Akhirnya nangis lagi di
+            part emaknya jadi pil huaaa.
+          </p>
+        </div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">
+            Abis itu aku disuruh papa ke resto buat mam trus aku muter-muter
+            lagi naik motor sendirian. Papa mama denger live music di MKG. Trus
+            karna aku bosen, aku samperin lagi mereka. MASA LAGUNYA PAS BANGETT.
+            Kamu coba denger deh Wijaya 80 - Terakhir Kali. Nyesek banget denger
+            lagunyaa tapi enakk. Trus kayaknya papa mama nyadar aku lagi galau
+            parah. Jadi mereka ngomong ke aku kayak alus gitu, biasanya agak
+            ngegas. Trus aku dibeliin es krim, bahkan sampe ditanya "mau kemana
+            lagi abis ini?". Biasanya aku disuruh langsung pulang. Dari denger
+            live music, aku masih muter-muter dikit buat healing. Baru deh
+            pulang ke rumahh.
+          </p>
+        </div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">
+            Itu ajasih kegiatan ku hari ini. Cuman biar ga kepikiran ajaa. Tapi
+            tetep kepikiran haiyaaaa.
+          </p>
+        </div>
+
+        <div class="space-line"></div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">
+            Kamu tau ga sih seberapa sayangnya aku ke kamu? Entahlah ya kamu
+            kira-kira aja wkwkwkwk.
+          </p>
+        </div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">
+            Energy aku kayaknya abis disini deh.
+          </p>
+        </div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">
+            Rasanya aku uda kasih semuanya buat kamu dan aku uda dapet semua
+            yang aku butuhin selama ini dari kamu.
+          </p>
+        </div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">
+            Jadi aku ga kepikiran buat ngapa-ngapain lagi.
+          </p>
+        </div>
+
+        <div class="space-line"></div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4 special-text">
+            Kita uda gabisa kayak kmaren lagi kah??
+          </p>
+        </div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">
+            Aku ngerti kalo kamu ga enak buat ngejalanin hubungan ini dengan
+            perasaan bersalah kamu.
+          </p>
+        </div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">
+            Tapi aku ga merasa dijahatin sama kamu.
+          </p>
+        </div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">
+            Ato kamu mau jahatin aku pun ga masalah.
+          </p>
+        </div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4 special-text">
+            Aku bener-bener lost sekarang.
+          </p>
+        </div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">
+            Aku ga tau harus apa, harus gimana, harus ngapain.
+          </p>
+        </div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">
+            Gabisa kah kita kayak biasa aja?
+          </p>
+        </div>
+
+        <div class="space-line"></div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">Please?</p>
+        </div>
+
+        <div class="space-line"></div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4 special-text">
+            Aku tau kita ujung-ujungnya akan berpisah.
+          </p>
+        </div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">
+            Tapi aku gamau dengan cara begini.
+          </p>
+        </div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">Tujuan ku buat kamu happy.</p>
+        </div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">
+            Nemenin kamu sampe nanti kamu dapet pasangan.
+          </p>
+        </div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">
+            Bahkan aku belom siap apa-apa.
+          </p>
+        </div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">
+            Terserah orang mau mikir ini berlebihan atau enggak.
+          </p>
+        </div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">
+            Tapi aku ga mau kita pisah... Untuk sekarang.
+          </p>
+        </div>
+
+        <div class="space-line"></div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">
+            Aku ga tau kita akan sampai kapan.
+          </p>
+        </div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">
+            Yang pasti bukan sekarang. Masih bisa lebih lama lagi.
+          </p>
+        </div>
+
+        <div class="space-line"></div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">
+            Sorry kalo kesannya aku maksa dan egois.
+          </p>
+        </div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4 special-text">
+            Tapi emang aku bener-bener gamau begini.
+          </p>
+        </div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">
+            Aku harus mohon gimana lagi??
+          </p>
+        </div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">Kamu mau aku gimana?</p>
+        </div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">
+            Aku janji bakal berubah kalo kamu mau.
+          </p>
+        </div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">
+            Aku ga overthinking lagi, ga nakal lagi, ga pendem semuanya sendiri
+            lagi.
+          </p>
+        </div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">
+            Semua hal yang kamu gasuka bakal aku hindari.
+          </p>
+        </div>
+
+        <div class="space-line"></div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4 special-text">Please?</p>
+        </div>
+
+        <div class="space-line"></div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">
+            Kmaren pun aku mau call, kamu ga angkat.
+          </p>
+        </div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">Aku bener-bener sedih.</p>
+        </div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">
+            Karna aku tau kamu ga akan call lagi abis hari itu lewat.
+          </p>
+        </div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">
+            Dan faktanya kita ga ada komunikasi kmaren kan. Cuman kirim-kirim
+            video doang.
+          </p>
+        </div>
+
+        <div class="space-line"></div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">Naca...</p>
+        </div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">
+            Masalah perasaan bersalah kamu, masih bisa kita fix bareng-bareng.
+          </p>
+        </div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">
+            Knapa kamu berpatok sama rasa bersalah kamu?
+          </p>
+        </div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">Kamu ga mikirin aku gimana?</p>
+        </div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4 special-text">
+            Aku bener-bener ga ngerasa kamu jahat atau gimana...
+          </p>
+        </div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">
+            Aku ga tau uda berapa kali aku jelasin pikiran ku ini ke kamu.
+          </p>
+        </div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">
+            Tapi kenapa kamu tetep sama pemikiran kamu sendiri?
+          </p>
+        </div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">
+            Kamu ga percaya sama aku kah?
+          </p>
+        </div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">
+            Atau sebenernya ada hal lain yang jadi alasannya?
+          </p>
+        </div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">
+            Kalo ada jelasin aja, aku selalu percaya sama omongan kamu.
+          </p>
+        </div>
+
+        <div class="space-line"></div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">
+            Aku uda gabisa liat kamu ngapain aja.
+          </p>
+        </div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">
+            Sekarang pun aku gatau kamu masih di sana ato nggak.
+          </p>
+        </div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">
+            Sorry kalo misalnya dengan aku kasih ini, kamu jadi terganggu
+            ngobrol atau mainnya.
+          </p>
+        </div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">
+            Aku ga ada niatan buat ngerusak suasana kamu sama yang lainnya.
+          </p>
+        </div>
+
+        <div class="space-line"></div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">
+            Aku uda gatau harus pake cara apa lagi.
+          </p>
+        </div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4 special-text">
+            Apa kita bener-bener uda gabisa kayak biasa lagi? Secepet ini?
+          </p>
+        </div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">Aku ga tau lah ya...</p>
+        </div>
+
+        <div class="space-line"></div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">Kamu jangan begadang ya...</p>
+        </div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">
+            Inget harus mulai benerin pola tidur...
+          </p>
+        </div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">
+            Uda mau masuk kantor kan? Bahkan aku ga tau kapan kamu mulai ke
+            kantor haiyaaa.
+          </p>
+        </div>
+
+        <div class="space-line"></div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">Gutnait nacaaaa...</p>
+        </div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">
+            Aku bakal disini nunggu kamu sampe dititik aku nyerah...
+          </p>
+        </div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">
+            Aku ga mau nyerah sih, tapi takutnya one day aku uda bener-bener
+            lost hope dan berakhir nyerah...
+          </p>
+        </div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">
+            Tapi sampe hari itu beneran terjadi, aku bakal tetep disini.
+          </p>
+        </div>
+
+        <div class="space-line"></div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">Hicii (?)</p>
+        </div>
+
+        <div class="space-line"></div>
+
+        <div class="message-part">
+          <p class="text-slate-200 text-lg mb-4">- Kimuy</p>
+        </div>
+        <!-- Continue with the rest of the messages in the same pattern -->
+
+        <script>
+          function checkVisibility() {
+            const messageParts = document.querySelectorAll(".message-part");
+            messageParts.forEach((part, index) => {
+              const rect = part.getBoundingClientRect();
+              const isVisible = rect.top <= window.innerHeight - 100;
+
+              if (isVisible) {
+                // Add delay based on index for cascade effect
+                setTimeout(() => {
+                  part.classList.add("visible");
+                }, index * 200); // 200ms delay between each message
+              }
+            });
+          }
+
+          // Check on scroll
+          window.addEventListener("scroll", checkVisibility);
+          // Check on initial load
+          document.addEventListener("DOMContentLoaded", checkVisibility);
+        </script>
+      </div>
+    </section>
+  </body>
+</html>
